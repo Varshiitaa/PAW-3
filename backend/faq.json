@@ -1,0 +1,42 @@
+[
+  {
+    "keywords": ["injured", "injury", "hit and run", "accident", "bleeding", "fracture", "limping", "trauma"],
+    "answer": "If you see an injured stray dog:\n1. Keep a safe distance and do not make sudden movements, as pain can cause a frightened dog to snap.\n2. Cover the dog gently with a blanket or towel to keep it warm and calm.\n3. Do not give oral food or water if the dog is unconscious or in shock.\n4. Contact a 24/7 NGO rescue ambulance or veterinary hospital immediately on our Help & Contacts page.",
+    "link": "Help & Contacts"
+  },
+  {
+    "keywords": ["bite", "bitten", "rabies", "scratched", "saliva", "dog bite"],
+    "answer": "URGENT BITE FIRST AID PROTOCOL:\n1. Wash the wound thoroughly under running tap water with soap for at least 15 minutes immediately.\n2. Do NOT apply tight bandages, soil, or home remedies on the wound.\n3. Visit a hospital or doctor IMMEDIATELY to start Anti-Rabies Vaccination (ARV) and Immunoglobulin (RIG).\n4. Rabies is 100% preventable if post-exposure vaccination is started promptly.",
+    "link": "Emergency Medical Care"
+  },
+  {
+    "keywords": ["feeding", "food", "feed", "biscuit", "eat", "milk", "diet"],
+    "answer": "Feeding Street Dogs Guidelines:\n• Safe foods: Boiled rice with chicken/curd, boiled eggs, dog kibble, chapatis with plain water.\n• Avoid: Chocolate, onions, garlic, cooked poultry bones, sugary sweets, and excessive milk (can cause diarrhea).\n• Feed at fixed daily times in quiet spots away from heavy traffic or doorways.",
+    "link": "Help & Contacts"
+  },
+  {
+    "keywords": ["sterilisation", "sterilization", "abc", "ear notch", "neutering", "spay", "litter", "puppies"],
+    "answer": "Animal Birth Control (ABC) Program in India:\n• Under ABC Rules 2023, street dogs are humanely caught, sterilised, vaccinated against Rabies, ear-notched for identification, and released back into their exact original territory.\n• Relocating street dogs to other areas is illegal under Indian law.\n• Contact your municipal stray dog cell or local ABC partner NGO.",
+    "link": "Help & Contacts"
+  },
+  {
+    "keywords": ["law", "legal", "rights", "police", "cruelty", "illegal", "harassment", "relocate"],
+    "answer": "Legal Rights & Animal Laws in India:\n• Section 11 of the Prevention of Cruelty to Animals (PCA) Act 1960 makes beating, starving, or abandoning any animal a criminal offense.\n• Citizens have a legal right to feed street dogs protected by High Court guidelines.\n• To report animal cruelty, lodge an FIR at your local police station or contact SPCA.",
+    "link": "Help & Contacts"
+  },
+  {
+    "keywords": ["ngo", "helpline", "phone", "number", "hospital", "contact", "vet", "ambulance"],
+    "answer": "You can find verified 24/7 rescue helplines, veterinary trauma hospitals, and municipal stray dog cells on our Help & Contacts page. We do not display unverified phone numbers in chat to ensure accurate emergency dispatch.",
+    "link": "Help & Contacts"
+  },
+  {
+    "keywords": ["puppy", "puppies", "orphaned", "litter", "motherless"],
+    "answer": "Caring for Stray Puppies:\n• Check if the mother dog is nearby before removing puppies.\n• Keep puppies warm with towels and hot water bottles wrapped in cloth.\n• Feed specialized puppy weaning formula or diluted warm goat milk; avoid cow's milk.\n• Seek foster care or shelter assistance via our Help & Contacts directory.",
+    "link": "Help & Contacts"
+  },
+  {
+    "keywords": ["heatstroke", "summer", "monsoon", "weather", "water bowl", "dehydration"],
+    "answer": "Weather & Seasonal Care for Street Animals:\n• Summer: Place clean water bowls in shaded street corners. Symptoms of heatstroke include heavy panting, drooling, and weakness—cool the body with damp towels.\n• Monsoon: Provide elevated dry shelter away from waterlogging and check for tick/flea infestations.",
+    "link": "Help & Contacts"
+  }
+]

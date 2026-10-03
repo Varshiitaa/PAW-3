@@ -13,21 +13,64 @@ from animal_reid import AnimalReID
 from breed_classifier import init_breed_classifier, classify_breed, is_model_ready
 from disease_classifier import init_disease_classifier, classify_disease, is_disease_model_ready
 
+from db.database import engine, Base
+from routers.ai_router import ai_router, set_ai_models
+from routers.rescues_router import rescues_router, complaints_router
+from routers.dogs_router import dogs_router
+from routers.auth_router import auth_router
+from routers.admin_router import admin_router
+from routers.users_router import users_router
+from routers.contacts_router import contacts_router
+from routers.chat_router import chat_router
+from routers.lost_found_router import lost_found_router
+from routers.analytics_router import analytics_router
+from routers.exports_router import exports_router
+
+# Create SQLAlchemy Database Tables on Startup
+Base.metadata.create_all(bind=engine)
+
 # Initialize FastAPI App
 app = FastAPI(
-    title="StreetPaw.AI Multi-Animal Vision Engine",
-    description="Strict Animal vs Plant/Non-Animal Classifier",
-    version="5.0.0"
+    title="StreetPaw.AI Multi-Animal Vision & Rescue Engine",
+    description="Collaborative Multi-Agent Platform for Stray Animal Welfare",
+    version="6.0.0"
 )
 
-# Enable CORS for Frontend Communication
+# Enable CORS locked to Citizen App (:5173) and NGO Portal (:5174)
+CORS_ORIGINS = [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://localhost:5175",
+    "http://127.0.0.1:5173",
+    "http://127.0.0.1:5174",
+    "http://127.0.0.1:5175"
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=CORS_ORIGINS,
+    allow_origin_regex=r"http://(localhost|127\.0\.0\.1)(:\d+)?",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Mount Modular API Routers
+app.include_router(ai_router)
+app.include_router(rescues_router)
+app.include_router(complaints_router)
+app.include_router(dogs_router)
+app.include_router(auth_router)
+app.include_router(admin_router)
+app.include_router(users_router)
+app.include_router(contacts_router)
+app.include_router(chat_router)
+app.include_router(lost_found_router)
+app.include_router(analytics_router)
+app.include_router(exports_router)
+
+
+
 
 # Global YOLO model holder
 yolo_model = None
@@ -80,6 +123,7 @@ def load_models():
 
     init_breed_classifier()
     init_disease_classifier()
+    set_ai_models(yolo_model, reid_model)
 
 @app.on_event("startup")
 async def startup_event():

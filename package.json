@@ -1,0 +1,17 @@
+{
+  "name": "streetpaw-ai-monorepo",
+  "private": true,
+  "version": "2.0.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "frontend"
+  ],
+  "scripts": {
+    "dev:citizen": "npm run dev --workspace=apps/citizen-app",
+    "dev:ngo": "npm run dev --workspace=apps/ngo-portal",
+    "dev:legacy": "npm run dev --workspace=frontend",
+    "build:citizen": "npm run build --workspace=apps/citizen-app",
+    "build:ngo": "npm run build --workspace=apps/ngo-portal"
+  }
+}

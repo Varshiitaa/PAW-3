@@ -1,0 +1,322 @@
+.pawly-chatbot-wrapper {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  .pawly-chatbot-wrapper {
+    bottom: 80px; /* Above mobile navigation bar */
+    right: 16px;
+  }
+}
+
+/* FLOATING BUTTON */
+.pawly-floating-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff5733 0%, #ff7e67 100%);
+  border: 2px solid #ffffff;
+  box-shadow: 0 8px 24px rgba(255, 87, 51, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  animation: idle-bob 3s ease-in-out infinite alternate;
+  transition: transform 200ms ease;
+}
+
+.pawly-floating-btn:hover {
+  transform: scale(1.1);
+}
+
+@keyframes idle-bob {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+.pawly-avatar-head {
+  position: relative;
+  font-size: 28px;
+}
+
+.pawly-badge-sparkle {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #10b981;
+  border-radius: 50%;
+  padding: 3px;
+  display: flex;
+}
+
+/* CHAT PANEL */
+.pawly-chat-panel {
+  width: 380px;
+  max-width: calc(100vw - 32px);
+  height: 520px;
+  max-height: calc(100vh - 120px);
+  background: rgba(11, 15, 25, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-medium, rgba(255, 255, 255, 0.15));
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slide-fade-in 260ms var(--ease-calm, ease);
+}
+
+@keyframes slide-fade-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* HEADER */
+.pawly-header {
+  padding: 12px 16px;
+  background: rgba(15, 23, 42, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pawly-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pawly-avatar-small {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff5733 0%, #ff7e67 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.pawly-name {
+  font-size: 0.925rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.pawly-status-text {
+  font-size: 0.725rem;
+}
+
+.pawly-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted, #94a3b8);
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.header-icon-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* LIMITED MODE BANNER */
+.limited-mode-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(245, 158, 11, 0.15);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.3);
+  color: #fbbf24;
+  font-size: 0.725rem;
+}
+
+/* MESSAGES LIST */
+.pawly-messages-list {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-bubble-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.chat-bubble-row.user {
+  justify-content: flex-end;
+}
+
+.bubble-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 87, 51, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.chat-bubble-content {
+  position: relative;
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.chat-bubble-content.user {
+  background: var(--primary-coral, #ff5733);
+  color: #ffffff;
+  border-bottom-right-radius: 2px;
+}
+
+.chat-bubble-content.assistant {
+  background: rgba(15, 23, 42, 0.85);
+  color: var(--text-secondary, #e2e8f0);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom-left-radius: 2px;
+}
+
+.bubble-text {
+  white-space: pre-wrap;
+}
+
+.copy-bubble-btn {
+  position: absolute;
+  bottom: 4px;
+  right: 6px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted, #94a3b8);
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.copy-bubble-btn:hover {
+  opacity: 1;
+}
+
+/* TYPING BOUNCING DOTS */
+.typing-dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 16px;
+}
+
+.typing-dots .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-coral, #ff5733);
+  animation: bounce-dot 1.2s infinite ease-in-out;
+}
+
+.typing-dots .dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots .dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce-dot {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1.2); opacity: 1; }
+}
+
+/* SUGGESTION CHIPS */
+.suggestion-chips-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  overflow-x: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  scrollbar-width: none;
+}
+
+.suggestion-chip {
+  white-space: nowrap;
+  font-size: 0.725rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted, #94a3b8);
+  cursor: pointer;
+  transition: all 180ms ease;
+  flex-shrink: 0;
+}
+
+.suggestion-chip:hover {
+  background: rgba(255, 87, 51, 0.15);
+  color: #ffffff;
+  border-color: var(--primary-coral, #ff5733);
+}
+
+/* INPUT BAR */
+.pawly-input-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: rgba(15, 23, 42, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pawly-input-field {
+  flex: 1;
+  background: rgba(11, 15, 25, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 8px 14px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.pawly-send-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary-coral, #ff5733);
+  border: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 180ms ease;
+}
+
+.pawly-send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* FOOTER DISCLAIMER */
+.pawly-disclaimer-footer {
+  font-size: 0.65rem;
+  color: var(--text-muted, #94a3b8);
+  text-align: center;
+  padding: 4px 8px 6px;
+  background: rgba(11, 15, 25, 0.98);
+}

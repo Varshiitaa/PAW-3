@@ -1,0 +1,219 @@
+.location-picker-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.location-picker-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.7);
+  padding: 6px;
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--border-medium, rgba(255, 255, 255, 0.1));
+}
+
+.picker-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm, 8px);
+  border: none;
+  background: transparent;
+  color: var(--text-muted, #94a3b8);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.picker-tab:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.picker-tab.active {
+  background: var(--primary-coral, #ff5733);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 87, 51, 0.3);
+}
+
+.picker-card-body {
+  padding: 24px;
+}
+
+.gps-request-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 20px;
+}
+
+.search-address-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.search-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-coral, #ff5733);
+  font-size: 0.85rem;
+}
+
+.spin {
+  animation: spin-rotate 1.2s linear infinite;
+}
+
+@keyframes spin-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.search-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  margin-top: 8px;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm, 8px);
+  background: rgba(15, 21, 35, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.search-result-item:hover {
+  background: rgba(255, 87, 51, 0.12);
+  border-color: var(--primary-coral, #ff5733);
+}
+
+.result-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.result-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.result-coords {
+  font-size: 0.75rem;
+  color: var(--text-muted, #94a3b8);
+  font-family: monospace;
+}
+
+.picker-map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+  border: 1px solid var(--border-medium, rgba(255, 255, 255, 0.15));
+}
+
+.map-canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+.map-instruction-overlay {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(11, 15, 25, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.775rem;
+  color: #ffffff;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.geo-error-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm, 8px);
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  font-size: 0.85rem;
+}
+
+.editable-location-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: rgba(15, 21, 35, 0.6);
+  padding: 18px;
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.coords-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grid-2-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.field-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary, #cbd5e1);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.location-picker-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* Custom Marker Styling */
+.pulse-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
+  animation: pulse-bounce 1.5s infinite alternate;
+}
+
+@keyframes pulse-bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-6px); }
+}
